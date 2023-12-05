@@ -5,6 +5,9 @@
   "repository": "https://github.com/gadielkalleb/cnabBuilder.git",
   "license": "MIT",
   "type": "module",
+  "scripts": {
+    "search": "node cnabRows.js"
+  },
   "engines": {
     "node": ">=20.0.0"
   },
