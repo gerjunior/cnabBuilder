@@ -5,6 +5,9 @@
   "repository": "https://github.com/gadielkalleb/cnabBuilder.git",
   "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
   "dependencies": {
     "chalk": "^4.1.0",
     "yargs": "^16.2.0"
