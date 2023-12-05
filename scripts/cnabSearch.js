@@ -1,5 +1,5 @@
 import path from 'node:path';
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile } from 'node:fs/promises';
 
 import yargs from 'yargs';
 import chalk from 'chalk';
