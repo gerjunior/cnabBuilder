@@ -7,8 +7,10 @@
   "type": "module",
   "scripts": {
     "search": "node scripts/cnabSearch.js",
+    "json": "node scripts/cnabGenerateJson.js",
     "example:name_search": "npm run search -- -i cnabExample.rem -n \"NTT BRASIL COMERCIO E SERVICOS DE TECNOL\"",
-    "example:index_search": "npm run search -- -i cnabExample.rem -f 21 -t 34 -s p"
+    "example:index_search": "npm run search -- -i cnabExample.rem -f 21 -t 34 -s p",
+    "example:generate_json": "npm run json -- -i cnabExample.rem -o cnabExample.output.json"
   },
   "engines": {
     "node": ">=20.0.0"
