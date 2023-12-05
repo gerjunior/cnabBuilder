@@ -8,6 +8,12 @@ import chalk from 'chalk';
 
 const optionsYargs = yargs(process.argv.slice(2))
   .usage('Uso: $0 [options]')
+  .option('i', {
+    alias: 'input',
+    describe: 'localização do documento CNAB para leitura (input)',
+    type: 'string',
+    demandOption: true,
+  })
   .option('f', {
     alias: 'from',
     describe: 'posição inicial de pesquisa da linha do CNAB',
@@ -32,10 +38,8 @@ const optionsYargs = yargs(process.argv.slice(2))
     'destaca o segmento de acordo com os parâmetros informados',
   ).argv;
 
-const { from, to, segment } = optionsYargs;
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const file = path.resolve(`${__dirname}/cnabExample.rem`);
+const { from, to, segment, input } = optionsYargs;
+const file = path.resolve(input);
 
 const messageLog = (segmento, segmentoType, from, to) => `
 ----- Cnab linha ${segmentoType} -----
