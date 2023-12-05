@@ -62,9 +62,6 @@ const optionsYargs = yargs(process.argv.slice(2))
     'busca a empresa pelo nome e destaca o segmento',
   ).argv;
 
-const { from, to, segment, input, name } = optionsYargs;
-const filePath = path.resolve(input);
-
 const log = (segment, segmentType, from, to) => {
   const segmentSubstring = segment.substring(from, to);
   console.log(`
@@ -88,7 +85,8 @@ item dentro da linha P:
 console.time('leitura Async');
 
 const exec = async () => {
-  const file = await readFile(filePath, 'utf8');
+  const { from, to, segment, input, name } = optionsYargs;
+  const file = await readFile(input, 'utf8');
 
   const lines = file.split('\n');
   // const header = lines.slice(0, 2);
